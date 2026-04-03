@@ -277,6 +277,14 @@ bun run skill:check
 
 When you run `bin/dev-setup`, it creates symlinks in both `.claude/skills/` and `.agents/skills/` (if applicable), so Codex-compatible agents can discover your dev skills too. The `.agents/` directory is generated at setup time from `.tmpl` templates — it is gitignored and not committed.
 
+It also enables repo-managed git hooks via `core.hooksPath=.githooks`. Those hooks block commits and pushes that include paths matching `.gitignore`, which catches the most common mistakes in this repo: compiled binaries, generated skill trees, local state, and secrets.
+
+If you cloned the repo before this was added, enable the hooks once:
+
+```bash
+git config core.hooksPath .githooks
+```
+
 ### Adding a new skill
 
 When you add a new skill template, both hosts get it automatically:

@@ -28,6 +28,9 @@ if [ ! -d "$REPO_ROOT/node_modules" ]; then
   (cd "$REPO_ROOT" && bun install)
 fi
 
+# 2b. Enable repo-managed git hooks for artifact safety checks
+git -C "$REPO_ROOT" config core.hooksPath .githooks
+
 # 3. Create .claude/skills/ inside the repo
 mkdir -p "$REPO_ROOT/.claude/skills"
 
@@ -63,6 +66,7 @@ echo ""
 echo "Dev mode active. Skills resolve from this working tree."
 echo "  .claude/skills/gstack → $REPO_ROOT"
 echo "  .agents/skills/gstack → $REPO_ROOT"
+echo "  git hooks: $REPO_ROOT/.githooks"
 echo "Edit any SKILL.md and test immediately — no copy/deploy needed."
 echo ""
 echo "To tear down: bin/dev-teardown"

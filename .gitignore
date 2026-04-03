@@ -1,20 +1,28 @@
-.env
-node_modules/
-browse/dist/
-design/dist/
-bin/gstack-global-discover
-.gstack/
-.claude/skills/
-.agents/
-.factory/
-.context/
-extension/.auth.json
-.gstack-worktrees/
-/tmp/
-*.log
-*.bun-build
+# Secrets and local env
 .env
 .env.local
 .env.*
 !.env.example
+extension/.auth.json
+
+# Dependencies
+node_modules/
+
+# Generated binaries and runtime outputs
+bin/gstack-global-discover
+browse/dist/
+design/dist/
+*.bun-build
+*.log
+
+# Generated agent skill trees
+.claude/skills/
+.agents/
+.factory/
+.context/
+
+# Local runtime state
+.gstack/
+.gstack-worktrees/
+/tmp/
 supabase/.temp/
