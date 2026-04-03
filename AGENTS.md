@@ -4,6 +4,12 @@ gstack is a collection of SKILL.md files that give AI agents structured roles fo
 software development. Each skill is a specialist: CEO reviewer, eng manager,
 designer, QA lead, release engineer, debugger, and more.
 
+## Codex Usage Guide
+
+If you are using gstack from Codex and want an operator-focused guide for when to
+use it, how repo-local vs global installs interact, and which skill names to use,
+read [docs/CODEX_GSTACK_GUIDE.zh-CN.md](docs/CODEX_GSTACK_GUIDE.zh-CN.md).
+
 ## Available skills
 
 Skills live in `.agents/skills/`. Invoke them by name (e.g., `/office-hours`).
